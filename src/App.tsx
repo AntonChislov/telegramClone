@@ -5,6 +5,8 @@ import avatar from './avatar.png'
 import {v1} from "uuid";
 import MyButton from "./components/MyButton";
 import FriendMessage from "./components/friend-message/FriendMessage";
+import Counter from "./Counter";
+import {CounterSet} from "./CounterSet";
 
 export type MessageType = {
     id: string
@@ -134,9 +136,47 @@ function App() {
         setMyDisabled(false)
     }
 
+    const [maxValue, setMaxValue] = useState<string | number>(5)
+    const [minValue, setMinValue] = useState<number | string>(0)
+
+    const [value, setValueCount] = useState<number | string>(0)
+    const [disabled, setDisabled] = useState<boolean>(false)
+    const [disabledRes, setDisabledRes] = useState<boolean>(true)
+    const [disabledSet, setDisabledSet] = useState<boolean>(false)
+    const [pressSet, setPressSet] = useState<boolean>(false)
+
+    const addHandler = () => {
+        setValueCount(+value + 1)
+        if (value === (+maxValue - 1)) setDisabled(true)
+        setDisabledRes(false)
+    }
+
+    const resetHandler = () => {
+        setDisabled(false)
+        setValueCount(minValue)
+        setDisabledRes(true)
+    }
+
+    const setHandler = () => {
+        setValueCount(minValue)
+        setPressSet(false)
+        setDisabled(false)
+    }
+
+    const disabledButtons = () => {
+        setDisabledRes(true)
+        setDisabled(true)
+    }
+
     return (
         <div className="App-header">
-            <div className='messageBlock'>
+            <CounterSet disabledSet={disabledSet} setDisabledSet={setDisabledSet} disabledButtons={disabledButtons}
+                        setPressSet={setPressSet} setHandler={setHandler} minValue={minValue} maxValue={maxValue}
+                        setMaxValue={setMaxValue}
+                        setMinValue={setMinValue}/>
+            <Counter pressSet={pressSet} disabledRes={disabledRes} value={value} disabled={disabled}
+                     resetHandler={resetHandler} addHandler={addHandler}/>
+            {/*<div className='messageBlock'>
                 <div className='friendMessageBlock'>
                     {friendMessages.map(m => <FriendMessage message={m}/>)}
                 </div>
@@ -168,7 +208,7 @@ function App() {
                     <MyButton style={{marginTop: '5px'}} disabled={countMyMessage === 5}
                               onClickHandler={deleteAllMyMessage} title={'Удалить все'}/>
                 </div>
-            </div>
+            </div>*/}
         </div>
     );
 }
