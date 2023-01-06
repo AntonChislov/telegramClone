@@ -2,7 +2,6 @@
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
-    flex-direction: row;
     font-size: calc(10px + 2vmin);
     color: white;
     justify-content: center;
@@ -48,89 +47,4 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-}
-
-.blockCounter {
-    border: 2px #1a4faf solid;
-    border-radius: 10px;
-    width: 300px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-}
-
-.valueCounter {
-    border: 2px #1a4faf solid;
-    border-radius: 10px;
-    width: 240px;
-    height: 80px;
-    margin: 30px 30px 0 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.maxValue {
-    color: red;
-}
-
-.buttonsCounter {
-    border: 2px #1a4faf solid;
-    border-radius: 10px;
-    width: 240px;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 30px 30px 0 27px;
-}
-
-
-.blockSet {
-    border: 2px #1a4faf solid;
-    border-radius: 10px;
-    width: 300px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 30px;
-}
-
-.inputsSet {
-    border: 2px #1a4faf solid;
-    border-radius: 10px;
-    width: 240px;
-    height: 80px;
-    margin: 30px 30px 0 27px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.buttonSet{
-    border: 2px #1a4faf solid;
-    border-radius: 10px;
-    width: 240px;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 30px 30px 0 27px;
-}
-
-.errorMin {
-    outline: none;
-    border: 1px red solid;
-}
-
-.errorMax {
-    outline: none;
-    border: 1px red solid;
-}
-
-.inputClass {
-    outline: none;
 }

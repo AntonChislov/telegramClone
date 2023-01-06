@@ -1,0 +1,35 @@
+.blockCounter {
+    border: 2px #1a4faf solid;
+    border-radius: 10px;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.valueCounter {
+    border: 2px #1a4faf solid;
+    border-radius: 10px;
+    width: 240px;
+    height: 80px;
+    margin: 30px 30px 0 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maxValue {
+    color: red;
+}
+
+.buttonsCounter {
+    border: 2px #1a4faf solid;
+    border-radius: 10px;
+    width: 240px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 30px 0 27px;
+}
